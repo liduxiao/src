@@ -1,0 +1,7 @@
+---- malloc Matches (6 in 1 files) ----
+Init.c (c:\users\qinglong\desktop\telescope正式版\collie_snmpclient\src):	item = (sct_item_list *)malloc(sizeof(sct_item_list));
+Init.c (c:\users\qinglong\desktop\telescope正式版\collie_snmpclient\src):		sct_log_write(ERROR, "insert_item_list: malloc item failed.");
+Init.c (c:\users\qinglong\desktop\telescope正式版\collie_snmpclient\src):	*mib = (sct_hashset_t *)malloc(sizeof(sct_hashset_t));
+Init.c (c:\users\qinglong\desktop\telescope正式版\collie_snmpclient\src):		sct_log_write(ERROR, "parse_json_oid: malloc mib failed.");
+Init.c (c:\users\qinglong\desktop\telescope正式版\collie_snmpclient\src):	mibs->entry = malloc(SLOT_NUM*sizeof(sct_hashset_t *));
+Init.c (c:\users\qinglong\desktop\telescope正式版\collie_snmpclient\src):		sct_log_write(ERROR, "sct_init_mibs_hash:mibs malloc failed."); 
