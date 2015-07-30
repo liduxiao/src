@@ -11,8 +11,8 @@
 #define SCT_LOG_PATH "/var/log/collie_snmpserver.log"
 #define CONFIG_PID_FILE "/var/run/collie_snmpserver"
 
-static FILE     *fpid = NULL;
-static int      fdpid = -1;
+static FILE	 *fpid = NULL;
+static int	  fdpid = -1;
 static unsigned int s_thread_para[MAX_THREAD][4];
 static pthread_t s_tid[MAX_THREAD];
 pthread_mutex_t s_mutex[MAX_THREAD];
@@ -122,9 +122,9 @@ int sct_log_write(int level, char *fmt, ...)
 
 	va_start(vargs, fmt);
 	vfprintf(fp, time_buff, vargs);
-	vfprintf(fp, "    ", vargs);
+	vfprintf(fp, "	", vargs);
 	vfprintf(fp, level_str[level], vargs);
-	vfprintf(fp, "    ", vargs);
+	vfprintf(fp, "	", vargs);
 	vfprintf(fp, fmt, vargs);
 	vfprintf(fp, "\n", vargs);
 	va_end(vargs);
@@ -159,7 +159,7 @@ int handle_data(int sockfd, struct sockaddr_in addr)
 		}
 
 		ret = select(max_fd + 1, &rsets, NULL, NULL, NULL);
-        if (ret == -1) {
+		if (ret == -1) {
 			if (errno == EINTR){
 				continue;
 			}
@@ -168,7 +168,7 @@ int handle_data(int sockfd, struct sockaddr_in addr)
 				exit(0);
 			}
 		}
-    	else if (ret) {
+		else if (ret) {
 			if (FD_ISSET(sockfd, &rsets))
 			{
 				if((fd = accept(sockfd, (struct sockaddr *)&addr, (socklen_t *)&len)) == -1) {
@@ -199,8 +199,8 @@ int handle_data(int sockfd, struct sockaddr_in addr)
 			
 		}
 		else{
-        		sct_log_write(ERROR,"time out\n");
-    	}
+				sct_log_write(ERROR,"time out\n");
+		}
 
 	}
 	
